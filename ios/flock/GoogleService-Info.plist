@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBOjnZrm6Y57U5LHQUAB8GYEq0ZSypIspU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>241326484922</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.flockapp</string>
+	<key>PROJECT_ID</key>
+	<string>flock-llc-app-development</string>
+	<key>STORAGE_BUCKET</key>
+	<string>flock-llc-app-development.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:241326484922:ios:ce8f5f24f73c438367c183</string>
+</dict>
+</plist>

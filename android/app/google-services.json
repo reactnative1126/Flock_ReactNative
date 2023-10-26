@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "241326484922",
+    "project_id": "flock-llc-app-development",
+    "storage_bucket": "flock-llc-app-development.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241326484922:android:26b96c07afc9195267c183",
+        "android_client_info": {
+          "package_name": "com.flock"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVkrOsFCAUd-J0ebw0W-Z1Gw0Hfaxh8Uw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
