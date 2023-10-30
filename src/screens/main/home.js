@@ -31,6 +31,8 @@ export default Home = (props) => {
   const { feeling_type, feeling_value } = props.route.params;
   const [hawaii, setHawaii] = useState(false);
 
+  const images = [Images.bird1, Images.bird2, Images.bird3, Images.bird4, Images.bird5, Images.bird6]
+
   const [position, setPosition] = useState({
     latitude: 36.1387,
     longitude: -120.3601,
@@ -95,19 +97,20 @@ export default Home = (props) => {
                   latitude: location.region === 'CA' ? Polygon.CA[i][0] : Polygon.HI[i][0],
                   longitude: location.region === 'CA' ? Polygon.CA[i][1] : Polygon.HI[i][1]
                 }}>
-                <View style={[styles.viewMarker, { borderColor: Colors.green }]} />
+                {/* <View style={[styles.viewMarker, { borderColor: Colors.green }]} /> */}
+                <Image source={images[Math.floor(Math.random() * 5)]} style={{width: 20, height: 20, transform: [{ rotate: '10deg' }] }} />
               </Marker>
             )
           })}
         </MapView>
 
-        <View style={[styles.viewText, { paddingBottom: 20 }]}>
+        <View style={[styles.viewText, { paddingBottom: 30 }]}>
           <Text style={styles.text}>{
-            feeling_type == 'anxiety' ? 'It\'s not easy, but it\'s normal, 264 million people worldwide struggle with anxiety daily.' :
-              feeling_type == 'depressed' ? 'It\'s normal, 280 million people worldwide struggle with depression.' :
-                feeling_type == 'lonely' ? 'It\'s normal, 1.7 billion people worldwide feel lonely on any given day.' :
-                  feeling_type == 'stressed' ? 'It\'s normal, 243 million people in the US experience stress that affects their mental health.' :
-                    'Studies show gratitude extends the lifespan.'
+            feeling_type == 'anxiety' ? 'You are not alone, 264 million people worldwide struggle with anxiety daily.' :
+              feeling_type == 'depressed' ? 'Even though it may feel like it, you are not alone. 280 million people worldwide struggle with depression.' :
+                feeling_type == 'lonely' ? 'You are not alone, 1.7 billion people worldwide feel lonely on any given day.' :
+                  feeling_type == 'stressed' ? 'This is very normal, over 243 million adults and teens in the US report experiencing stress that affects their mental health.' :
+                    'Scientific research suggests that recognizing daily sources of gratitude can lead to a longer life.'
           }</Text>
         </View>
       </View>
@@ -136,7 +139,7 @@ const styles = StyleSheet.create({
   },
   mapView: {
     width: wp('100%'),
-    height: hp('100%') - 260
+    height: hp('100%') - 280
   },
   viewMarker: {
     width: 10,

@@ -32,7 +32,6 @@ export default Splash = (props) => {
     <View style={styles.container}>
       <StatusBar hidden />
       <Image source={Images.logo} style={styles.imageLogo} />
-      <Text style={styles.textTitle}>Flock</Text>
     </View>
   );
 };
