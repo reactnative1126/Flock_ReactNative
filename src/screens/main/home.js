@@ -99,7 +99,7 @@ export default Home = (props) => {
         <MapView
           region={position}
           style={styles.mapView}
-          // scrollEnabled={false}
+          scrollEnabled={false}
           zoomEnabled={false}
           rotateEnabled={false}
           provider={Platform.OS == 'ios' ? PROVIDER_DEFAULT : PROVIDER_GOOGLE}
