@@ -1,4 +1,4 @@
-package com.flock;
+package com.flockapp;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

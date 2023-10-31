@@ -5,5 +5,4 @@ export default Images = {
   bird3: require('@assets/images/003.png'),
   bird4: require('@assets/images/004.png'),
   bird5: require('@assets/images/005.png'),
-  bird6: require('@assets/images/006.png'),
 };

@@ -31,7 +31,7 @@ export default Home = (props) => {
   const { feeling_type, feeling_value } = props.route.params;
   const [hawaii, setHawaii] = useState(false);
 
-  const images = [Images.bird1, Images.bird2, Images.bird3, Images.bird4, Images.bird5, Images.bird6]
+  const images = [Images.bird1, Images.bird2, Images.bird3, Images.bird4, Images.bird5]
 
   const [position, setPosition] = useState({
     latitude: 36.1387,
@@ -54,10 +54,10 @@ export default Home = (props) => {
       latitudeDelta: 0.55,
       longitudeDelta: 0.55
     } : {
-      latitude: 37.9000,
-      longitude: -122.3601,
-      latitudeDelta: 5,
-      longitudeDelta: 5
+      latitude: 36.5,
+      longitude: -119.5,
+      latitudeDelta: 10,
+      longitudeDelta: 10
     })
   }, [hawaii]);
 
@@ -98,7 +98,7 @@ export default Home = (props) => {
                   longitude: location.region === 'CA' ? Polygon.CA[i][1] : Polygon.HI[i][1]
                 }}>
                 {/* <View style={[styles.viewMarker, { borderColor: Colors.green }]} /> */}
-                <Image source={images[Math.floor(Math.random() * 5)]} style={{width: 20, height: 20, transform: [{ rotate: '10deg' }] }} />
+                <Image source={images[Math.floor(Math.random() * 4)]} style={{ width: 20, height: 20, transform: [{ rotate: '30deg' }] }} />
               </Marker>
             )
           })}
