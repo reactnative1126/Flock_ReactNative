@@ -30,6 +30,8 @@ export default Home = (props) => {
 
   const { feeling_type, feeling_value } = props.route.params;
   const [hawaii, setHawaii] = useState(false);
+  const [hi, setHi] = useState(0);
+  const [ca, setCa] = useState(0);
 
   const images = [Images.bird1, Images.bird2, Images.bird3, Images.bird4, Images.bird5]
 
@@ -46,6 +48,20 @@ export default Home = (props) => {
       feeling_value: feeling_value
     }));
   }, []);
+
+  useEffect(() => {
+    var hii = 0;
+    var caa = 0;
+    locations?.map((location, index) => {
+      if (location?.region === 'CA') {
+        caa = caa + 1;
+      } else {
+        hii = hii + 1;
+      }
+    });
+    setHi(hii);
+    setCa(caa);
+  }, [locations]);
 
   useEffect(() => {
     setPosition(hawaii ? {
@@ -75,7 +91,7 @@ export default Home = (props) => {
       />
       <View style={styles.content}>
         <View style={styles.viewText}>
-          <Text style={styles.text}>{`${locations?.length} people near you are ${feeling_value == 'yes' ? 'also' : ''} feeling ${feeling_type == 'stressed' ? 'stressed/pressured' :
+          <Text style={styles.text}>{`${hawaii ? hi : ca} people near you are ${feeling_value == 'yes' ? 'also' : ''} feeling ${feeling_type == 'stressed' ? 'stressed/pressured' :
             feeling_type == 'anxiety' ? 'anxiety/anxious' :
               feeling_type == 'depressed' ? 'depressed/sad' : feeling_type
             } today.`}</Text>
@@ -98,7 +114,7 @@ export default Home = (props) => {
                   longitude: location.region === 'CA' ? Polygon.CA[i][1] : Polygon.HI[i][1]
                 }}>
                 {/* <View style={[styles.viewMarker, { borderColor: Colors.green }]} /> */}
-                <Image source={images[Math.floor(Math.random() * 4)]} style={{ width: 20, height: 20, transform: [{ rotate: '30deg' }] }} />
+                <Image source={images[Math.floor(Math.random() * 4)]} style={{ width: 20, height: 20, transform: [{ rotate: '30deg' }] }} resizeMode='contain' />
               </Marker>
             )
           })}
