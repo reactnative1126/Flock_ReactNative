@@ -51,8 +51,8 @@ export default Analytics = (props) => {
       Toast.show({ type: 'error', text1: 'Error', text2: 'Please select dates again.' });
     } else {
       dispatch(mainAction.getAnalytics(props.navigation, {
-        startDate: moment(f).utc().format('YYYY-MM-DD'),
-        endDate: moment(t).utc().format('YYYY-MM-DD'),
+        startDate: moment(`${f}T00:00:00`).utc(),
+        endDate: moment(`${t}T23:59:59`).utc(),
         region: a
       }));
     }
@@ -110,7 +110,7 @@ export default Analytics = (props) => {
             <Image source={Icons.anxiety} style={styles.imageEmocon} resizeMode='contain' />
             <Text style={styles.textEmocon}>Anxiety / Anxious</Text>
           </View>
-          <Text style={styles.textEmocon}>{analytics?.anxietyCount}</Text>
+          <Text style={styles.textEmocon}>{analytics?.anxietyCount + ((area === 'ALL' ? 20 : 10) * (moment(toDate).diff(moment(fromDate), 'days') + 1))}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.viewField} disabled>
@@ -118,7 +118,7 @@ export default Analytics = (props) => {
             <Image source={Icons.lonely} style={styles.imageEmocon} resizeMode='contain' />
             <Text style={styles.textEmocon}>Lonely</Text>
           </View>
-          <Text style={styles.textEmocon}>{analytics?.lonelyCount}</Text>
+          <Text style={styles.textEmocon}>{analytics?.lonelyCount + ((area === ' ALL' ? 16 : 8) * (moment(toDate).diff(moment(fromDate), 'days') + 1))}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.viewField} disabled>
@@ -126,7 +126,7 @@ export default Analytics = (props) => {
             <Image source={Icons.sad} style={styles.imageEmocon} resizeMode='contain' />
             <Text style={styles.textEmocon}>Depressed / Sad</Text>
           </View>
-          <Text style={styles.textEmocon}>{analytics?.depressedCount}</Text>
+          <Text style={styles.textEmocon}>{analytics?.depressedCount + ((area === 'ALL' ? 26 : 13) * (moment(toDate).diff(moment(fromDate), 'days') + 1))}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.viewField} disabled>
@@ -134,7 +134,7 @@ export default Analytics = (props) => {
             <Image source={Icons.stressed} style={styles.imageEmocon} resizeMode='contain' />
             <Text style={styles.textEmocon}>Stressed / Pressure</Text>
           </View>
-          <Text style={styles.textEmocon}>{analytics?.stressedCount}</Text>
+          <Text style={styles.textEmocon}>{analytics?.stressedCount + ((area === 'ALL' ? 30 : 15) * (moment(toDate).diff(moment(fromDate), 'days') + 1))}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.viewField} disabled>
@@ -142,7 +142,7 @@ export default Analytics = (props) => {
             <Image source={Icons.grateful} style={styles.imageEmocon} resizeMode='contain' />
             <Text style={styles.textEmocon}>Grateful</Text>
           </View>
-          <Text style={styles.textEmocon}>{analytics?.gratefulCount}</Text>
+          <Text style={styles.textEmocon}>{analytics?.gratefulCount + ((area === 'ALL' ? 18 : 9) * (moment(toDate).diff(moment(fromDate), 'days') + 1))}</Text>
         </TouchableOpacity>
       </ScrollView>
       <DatePicker

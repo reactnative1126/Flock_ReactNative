@@ -69,7 +69,9 @@ export default First = (props) => {
           dispatch(mainAction.setFeel(props.navigation, {
             uid: userInfo?.uid,
             type: type,
-            status: 'no'
+            status: 'no',
+            startDate: moment(`${moment().format('YYYY-MM-DD')}T00:00:00`).utc(),
+            endDate: moment(`${moment().format('YYYY-MM-DD')}T23:59:59`).utc()
           }));
         },
         style: `cancel`
@@ -79,7 +81,9 @@ export default First = (props) => {
           dispatch(mainAction.setFeel(props.navigation, {
             uid: userInfo?.uid,
             type: type,
-            status: 'yes'
+            status: 'yes',
+            startDate: moment(`${moment().format('YYYY-MM-DD')}T00:00:00`).utc(),
+            endDate: moment(`${moment().format('YYYY-MM-DD')}T23:59:59`).utc()
           }));
         }
       }

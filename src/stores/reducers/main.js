@@ -3,8 +3,14 @@ import types from '@stores/types';
 const initialState = {
   locations: [],
   analytics: null,
+  maxCount: {
+    anxiety: 10,
+    depressed: 10,
+    grateful: 10,
+    lonely: 10,
+    stressed: 10
+  },
   charts: {
-    max: 5,
     anxiety: [
       { x: 0, y: 0 },
       { x: 1, y: 0 },
@@ -69,6 +75,7 @@ export default function mainReducer(state = initialState, action) {
       return {
         ...state,
         charts: action.payload,
+        maxCount: action.maxCount
       };
     default:
       return state;

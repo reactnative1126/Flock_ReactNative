@@ -13,9 +13,9 @@ function* setLocationSaga({ navigation, payload }) {
       longitude: payload.longitude,
       region: payload.region
     });
-    if (response.data) {
-      yield put(authAction.updateUserInfo(response.data?.data[0]));
-    }
+    // if (response.data) {
+    //   yield put(authAction.updateUserInfo(response.data?.data[0]));
+    // }
   } catch (error) {
     Toast.show({ type: 'error', text1: 'Error', text2: 'Update location failed!' });
   } finally {
@@ -29,7 +29,9 @@ function* setFeelSaga({ navigation, payload }) {
     let response = yield apiSetFeel({
       uid: payload.uid,
       type: payload.type,
-      status: payload.status
+      status: payload.status,
+      startDate: payload.startDate,
+      endDate: payload.endDate
     });
     if (response.data) {
       yield put(authAction.updateFeelData({ [payload.type]: payload.status }));
@@ -47,7 +49,9 @@ function* getLocationsSaga({ navigation, payload }) {
     yield put(athenaAction.loading(true));
     let response = yield apiGetLocations({
       feeling_type: payload.feeling_type,
-      feeling_value: payload.feeling_value
+      feeling_value: payload.feeling_value,
+      startDate: payload.startDate,
+      endDate: payload.endDate
     });
     if (response.data) {
       yield put(mainAction.updateLocations(response.data?.data))
@@ -86,15 +90,7 @@ function* getChartsSaga({ navigation, payload }) {
       region: payload.region
     });
     if (response.data) {
-      var aaa = Math.max(parseInt(response.data?.data?.anxiety[0]?.y), parseInt(response.data?.data?.anxiety[1]?.y), parseInt(response.data?.data?.anxiety[2]?.y), parseInt(response.data?.data?.anxiety[3]?.y), parseInt(response.data?.data?.anxiety[4]?.y, parseInt(response.data?.data?.anxiety[5]?.y), parseInt(response.data?.data?.anxiety[6]?.y)));
-      var bbb = Math.max(parseInt(response.data?.data?.lonely[0]?.y), parseInt(response.data?.data?.lonely[1]?.y), parseInt(response.data?.data?.lonely[2]?.y), parseInt(response.data?.data?.lonely[3]?.y), parseInt(response.data?.data?.lonely[4]?.y, parseInt(response.data?.data?.lonely[5]?.y), parseInt(response.data?.data?.lonely[6]?.y)));
-      var ccc = Math.max(parseInt(response.data?.data?.depressed[0]?.y), parseInt(response.data?.data?.depressed[1]?.y), parseInt(response.data?.data?.depressed[2]?.y), parseInt(response.data?.data?.depressed[3]?.y), parseInt(response.data?.data?.depressed[4]?.y, parseInt(response.data?.data?.depressed[5]?.y), parseInt(response.data?.data?.depressed[6]?.y)));
-      var ddd = Math.max(parseInt(response.data?.data?.stressed[0]?.y), parseInt(response.data?.data?.stressed[1]?.y), parseInt(response.data?.data?.stressed[2]?.y), parseInt(response.data?.data?.stressed[3]?.y), parseInt(response.data?.data?.stressed[4]?.y, parseInt(response.data?.data?.stressed[5]?.y), parseInt(response.data?.data?.stressed[6]?.y)));
-      var eee = Math.max(parseInt(response.data?.data?.grateful[0]?.y), parseInt(response.data?.data?.grateful[1]?.y), parseInt(response.data?.data?.grateful[2]?.y), parseInt(response.data?.data?.grateful[3]?.y), parseInt(response.data?.data?.grateful[4]?.y, parseInt(response.data?.data?.grateful[5]?.y), parseInt(response.data?.data?.grateful[6]?.y)));
-
-      var max = Math.max(aaa, bbb, ccc, ddd, eee);
-
-      yield put(mainAction.setCharts({ max, ...response.data?.data }))
+      yield put(mainAction.setCharts(response.data?.data, response.data?.maxCount))
     }
   } catch (error) {
     Toast.show({ type: 'error', text1: 'Error', text2: 'Get charts failed!' });

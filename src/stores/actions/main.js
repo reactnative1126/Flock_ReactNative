@@ -34,8 +34,9 @@ export default class mainAction {
     navigation: navigation,
     payload: data
   });
-  static setCharts = (data) => ({
+  static setCharts = (data, maxCount) => ({
     type: types.SET_CHARTS,
-    payload: data
+    payload: data,
+    maxCount
   });
 }

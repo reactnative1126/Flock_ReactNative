@@ -16,6 +16,8 @@ export const apiSetFeel = (params) => {
         uid: params.uid,
         feeling_type: params.type,
         feeling_value: params.status,
+        startDate: params.startDate,
+        endDate: params.endDate
     });
 };
 
@@ -23,6 +25,8 @@ export const apiGetLocations = (params) => {
     return Http.post(Urls.GET_LOCATIONS, {
         feeling_type: params.feeling_type,
         feeling_value: params.feeling_value,
+        startDate: params.startDate,
+        endDate: params.endDate
     });
 };
 

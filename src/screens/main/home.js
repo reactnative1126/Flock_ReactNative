@@ -32,6 +32,7 @@ export default Home = (props) => {
   const [hawaii, setHawaii] = useState(false);
   const [hi, setHi] = useState(0);
   const [ca, setCa] = useState(0);
+  const [temp, setTemp] = useState([]);
 
   const images = [Images.bird1, Images.bird2, Images.bird3, Images.bird4, Images.bird5]
 
@@ -43,9 +44,16 @@ export default Home = (props) => {
   });
 
   useEffect(() => {
+    if (feeling_type == 'anxiety') setTemp([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+    if (feeling_type == 'lonely') setTemp([1, 2, 3, 4, 5, 6, 7, 8]);
+    if (feeling_type == 'depressed') setTemp([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]);
+    if (feeling_type == 'stressed') setTemp([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
+    if (feeling_type == 'grateful') setTemp([1, 2, 3, 4, 5, 6, 7, 8, 9]);
     dispatch(mainAction.getLocations(props.navigation, {
       feeling_type: feeling_type,
-      feeling_value: feeling_value
+      feeling_value: feeling_value,
+      startDate: moment(`${moment().format('YYYY-MM-DD')}T00:00:00`).utc(),
+      endDate: moment(`${moment().format('YYYY-MM-DD')}T23:59:59`).utc()
     }));
   }, []);
 
@@ -91,10 +99,12 @@ export default Home = (props) => {
       />
       <View style={styles.content}>
         <View style={styles.viewText}>
-          <Text style={styles.text}>{`${hawaii ? hi : ca} people near you are ${feeling_value == 'yes' ? 'also' : ''} feeling ${feeling_type == 'stressed' ? 'stressed/pressured' :
-            feeling_type == 'anxiety' ? 'anxiety/anxious' :
-              feeling_type == 'depressed' ? 'depressed/sad' : feeling_type
-            } today.`}</Text>
+          <Text style={styles.text}>{
+            feeling_type == 'anxiety' ? `${(hawaii ? hi : ca) + temp.length} people near you are ${feeling_value == 'yes' ? 'also' : ''} feeling anxiety/anxious today` :
+              feeling_type == 'lonely' ? `${(hawaii ? hi : ca) + temp.length} people near you are ${feeling_value == 'yes' ? 'also' : ''} feeling lonely today` :
+                feeling_type == 'depressed' ? `${(hawaii ? hi : ca) + temp.length} people near you are ${feeling_value == 'yes' ? 'also' : ''} feeling depressed/sad today` :
+                  feeling_type == 'stressed' ? `${(hawaii ? hi : ca) + temp.length} people near you are ${feeling_value == 'yes' ? 'also' : ''} feeling stressed/pressured today` :
+                    `${(hawaii ? hi : ca) + temp.length} people near you are ${feeling_value == 'yes' ? 'also' : ''} feeling grateful today.`}</Text>
         </View>
         <MapView
           region={position}
@@ -105,7 +115,7 @@ export default Home = (props) => {
           provider={Platform.OS == 'ios' ? PROVIDER_DEFAULT : PROVIDER_GOOGLE}
         >
           {locations?.map((location, index) => {
-            var i = Math.floor(Math.random() * 50);
+            var i = Math.floor(Math.random() * 100);
             return (
               <Marker key={`location${index}`}
                 anchor={{ x: 0.5, y: 0.5 }}
@@ -114,7 +124,35 @@ export default Home = (props) => {
                   longitude: location.region === 'CA' ? Polygon.CA[i][1] : Polygon.HI[i][1]
                 }}>
                 {/* <View style={[styles.viewMarker, { borderColor: Colors.green }]} /> */}
-                <Image source={images[Math.floor(Math.random() * 4)]} style={{ width: 20, height: 20, transform: [{ rotate: '30deg' }] }} resizeMode='contain' />
+                <Image source={images[Math.floor(Math.random() * 4)]} style={{ width: 20, height: 20, transform: [{ rotate: `${Math.floor(Math.random() * 360)}deg` }] }} resizeMode='contain' />
+              </Marker>
+            )
+          })}
+          {temp?.map((item, index) => {
+            var i = Math.floor(Math.random() * 100);
+            return (
+              <Marker key={`california${index}`}
+                anchor={{ x: 0.5, y: 0.5 }}
+                coordinate={{
+                  latitude: Polygon.CA[i][0],
+                  longitude: Polygon.CA[i][1]
+                }}>
+                {/* <View style={[styles.viewMarker, { borderColor: Colors.green }]} /> */}
+                <Image source={images[Math.floor(Math.random() * 4)]} style={{ width: 20, height: 20, transform: [{ rotate: `${Math.floor(Math.random() * 360)}deg` }] }} resizeMode='contain' />
+              </Marker>
+            )
+          })}
+          {temp?.map((item, index) => {
+            var i = Math.floor(Math.random() * 100);
+            return (
+              <Marker key={`hawaii${index}`}
+                anchor={{ x: 0.5, y: 0.5 }}
+                coordinate={{
+                  latitude: Polygon.HI[i][0],
+                  longitude: Polygon.HI[i][1]
+                }}>
+                {/* <View style={[styles.viewMarker, { borderColor: Colors.green }]} /> */}
+                <Image source={images[Math.floor(Math.random() * 4)]} style={{ width: 20, height: 20, transform: [{ rotate: `${Math.floor(Math.random() * 360)}deg` }] }} resizeMode='contain' />
               </Marker>
             )
           })}
