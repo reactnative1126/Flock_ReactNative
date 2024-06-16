@@ -15,6 +15,7 @@ LogBox.ignoreLogs([
 ]);
 LogBox.ignoreAllLogs(true);
 
+
 export default App = () => {
   return (
     <Provider store={store}>
