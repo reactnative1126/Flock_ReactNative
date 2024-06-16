@@ -3,6 +3,19 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 # Flock <img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/images/logo.png" width="80">
 
 
+## App Preview
+
+<img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/screens/1.png" width="270" alt="Screen 1" hspace="5">
+
+
+
+
+
+
+
+
+
+
 # Getting Started
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
