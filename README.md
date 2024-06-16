@@ -5,7 +5,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 ## App Preview
 
-<img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/screens/1.png" width="270" alt="Screen 1" hspace="5">
+<img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/screens/1.png" width="500" alt="Screen 1" hspace="5">
 
 
 
