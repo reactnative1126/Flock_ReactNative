@@ -1,6 +1,6 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Flock <img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/images/logo.png" width="80">
+# Flock (Feeling Management App) <img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/images/logo.png" width="80">
 
 ## App Preview
 
