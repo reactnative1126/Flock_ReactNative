@@ -2,7 +2,6 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Flock <img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/images/logo.png" width="80">
 
-
 ## App Preview
 
 <img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/screens/1.png" width="500" alt="Screen 1" hspace="5">
@@ -10,7 +9,6 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 <img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/screens/3.png" width="500" alt="Screen 2" hspace="5">
 
 <img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/screens/4.png" width="500" alt="Screen 3" hspace="5">
-
 
 # Getting Started
 
