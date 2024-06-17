@@ -113,4 +113,4 @@ To learn more about React Native, take a look at the following resources:
 
 ## License
 
-Flock React Native mobile application is licensed under [The MIT License](LICENSE) © Silas Jones 2017-
+Flock React Native mobile application is licensed under [The MIT License](LICENSE) © Silas Jones 2023-
