@@ -1,20 +1,34 @@
+![React Native Apps](http://i.imgur.com/MmGT6cn.png "React Native Apps")
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Flock (Feeling Management App) <img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/images/logo.png" width="80">
+# Flock: Feeling Management Mobile Application
 
-## App Preview
+![platforms](https://img.shields.io/badge/platforms-Android%20%7C%20iOS-brightgreen.svg?style=flat-square&colorB=191A17)
+![star this repo](https://img.shields.io/github/stars/react-native-webview/react-native-webview?style=flat-square)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![NPM Version](https://img.shields.io/npm/v/react-native-webview.svg?style=flat-square)](https://www.npmjs.com/package/react-native-webview)
+![Npm Downloads](https://img.shields.io/npm/dm/react-native-webview.svg)
 
-<img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/screens/1.png" width="500" alt="Screen 1" hspace="5">
+<img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/images/logo.png" width="80">
 
-<img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/screens/3.png" width="500" alt="Screen 2" hspace="5">
+<!-- ## Download
 
-<img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/screens/4.png" width="500" alt="Screen 3" hspace="5">
+[![App Store Button](http://imgur.com/y8PTxr9.png "App Store Button")](https://apps.apple.com/us/app/housesigma-canada-real-estate/id1255490256)
+[![Play Store Button](http://imgur.com/utWa1co.png "Play Store Button")](https://play.google.com/store/search?q=house%20sigma&c=apps&hl=en_US&gl=US)
+-->
 
-# Getting Started
+## Preview
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+Welcome to my project! Below are my favorite screenshots related to this project:
 
-## Step 1: Start the Metro Server
+<img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/screens/1.png" width="250" alt="Screen 1" hspace="5"> <img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/screens/3.png" width="250" alt="Screen 5" hspace="5"> <img src="https://github.com/reactnative1126/Flock_ReactNative/blob/master/src/assets/screens/4.png" width="250" alt="Screen 4" hspace="5">
+
+## Getting Started
+
+>**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till the "Creating a new application" step, before proceeding.
+
+### Step 1: Start the Metro Server
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
@@ -28,11 +42,11 @@ npm start
 yarn start
 ```
 
-## Step 2: Start your Application
+### Step 2: Start your Application
 
 Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 
-### For Android
+#### For Android
 
 ```bash
 # using npm
@@ -42,7 +56,7 @@ npm run android
 yarn android
 ```
 
-### For iOS
+#### For iOS
 
 ```bash
 # using npm
@@ -56,7 +70,7 @@ If everything is set up _correctly_, you should see your new app running in your
 
 This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
 
-## Step 3: Modifying your App
+### Step 3: Modifying your App
 
 Now that you have successfully run the app, let's modify it.
 
@@ -65,20 +79,30 @@ Now that you have successfully run the app, let's modify it.
 
    For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
 
-## Congratulations! :tada:
+### Congratulations! :tada:
 
 You've successfully run and modified your React Native App. :partying_face:
 
-### Now what?
+#### Now what?
 
 - If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
 - If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
 
-# Troubleshooting
+## Contributors
+
+<table>
+  <tr>
+    <td align="center"><a href="https://twitter.com/_panpawel"><img src="https://avatars3.githubusercontent.com/u/3886886?v=4" width="100px;" alt="Paweł Szymański"/><br /><sub><b>Paweł Szymański</b></sub></a><br /><a href="https://github.com/callstack/react-native-paper/commits?author=pan-pawel" title="Code">💻</a> <a href="https://github.com/callstack/react-native-paper/commits?author=pan-pawel" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/jayu"><img src="https://avatars1.githubusercontent.com/u/11561585?v=4" width="100px;" alt="Kuba"/><br /><sub><b>Kuba</b></sub></a><br /><a href="https://github.com/callstack/react-native-paper/commits?author=jayu" title="Code">💻</a> <a href="#ideas-jayu" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/jbinda"><img src="https://avatars2.githubusercontent.com/u/21242757?v=4" width="100px;" alt="jbinda"/><br /><sub><b>jbinda</b></sub></a><br /><a href="https://github.com/callstack/react-native-paper/commits?author=jbinda" title="Code">💻</a> <a href="#ideas-jbinda" title="Ideas, Planning, & Feedback">🤔</a></td>
+  </tr>
+</table>
+
+## Troubleshooting
 
 If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
-# Learn More
+## Learn More
 
 To learn more about React Native, take a look at the following resources:
 
@@ -86,4 +110,7 @@ To learn more about React Native, take a look at the following resources:
 - [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+## License
+
+Flock React Native mobile application is licensed under [The MIT License](LICENSE) © Silas Jones 2017-
